@@ -7,7 +7,7 @@
 <!-- link CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 <link rel="shortcut icon" href="https://th.bing.com/th/id/OIP.fluJpH1c6pdwKMcKQ2iebgHaHa?pid=ImgDet&rs=1" type="image/x-icon">
-<title></title>
+<title th:text="${TituloPagina}"></title>
 </head>
 <body>
 <!-- Header -->
@@ -39,7 +39,26 @@
 </header>
 
 
-    <h1>HI 2</h1>
+    <h1 th:text="${titulo2}">HI 2</h1>
+    
+    <hr>
+    <div>
+    	<ul th:each="personaje : ${listita2}">
+    		<li th:text="${personaje.nombre}">
+    		<li th:text="${personaje.edad}">
+    		<li th:text="${personaje.serie}">
+    		<li th:text="${personaje.estado}">
+    		<li th:text="${personaje.nacimiento}">
+    		</ul>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     <!-- link JS bootstrap -->
