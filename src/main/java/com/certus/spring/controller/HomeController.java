@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/app") //indicando ruta inicial
 public class HomeController {
 	
-	@Value("titulo.Generado ")
+	@Value("titulo.Generado ")            //evaluando el titulo del propertis
 	private String tituloPagina;
 	
 	
@@ -22,5 +22,5 @@ public class HomeController {
 	public String HolaMundo2() {
 		return "Home2";
 	}
-	//@GetMapping("/home", "/")
+
 }
