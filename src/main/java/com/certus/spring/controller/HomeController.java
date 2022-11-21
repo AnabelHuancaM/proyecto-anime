@@ -10,11 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/app") //indicando ruta inicial
 public class HomeController {
 	
-<<<<<<< HEAD
-	@Value("${title.generic}")
-=======
 	@Value("${title.generic}")            //evaluando el titulo del propertis
->>>>>>> ed9cd10b9ab503ff70f6b5f54273ea1581e4589e
 	private String titlePage;
 	
 	
