@@ -10,12 +10,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/app") //indicando ruta inicial
 public class HomeController {
 	
+<<<<<<< HEAD
 	@Value("${title.generic}")
+=======
+	@Value("${title.generic}")            //evaluando el titulo del propertis
+>>>>>>> ed9cd10b9ab503ff70f6b5f54273ea1581e4589e
 	private String titlePage;
 	
 	
 	@GetMapping({"/home1", "/valentino", "/Home1"})            //indicando las rutas que llamaremos
-	public String HolaMundo() {
+	public String HolaMundo(Model model) {
+		model.addAttribute("TituloPagina", titlePage);
+		
 		return "Home";
 	}
 
@@ -25,5 +31,5 @@ public class HomeController {
 		model.addAttribute("TituloPagina", titlePage);
 		return "Home2";
 	}
-	//@GetMapping("/home", "/")
+
 }
