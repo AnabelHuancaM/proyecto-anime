@@ -9,7 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.certus.spring.models.Personaje;
+import com.certus.spring.service.PersonajeService;
 import com.certus.spring.models.Mascota;
 
 
@@ -19,6 +19,9 @@ public class HomeController {
 	
 	@Value("${title.generic}")            //evaluando el titulo del propertis
 	private String titlePage;
+	
+	//service personaje
+	private PersonajeService personajes = new PersonajeService(); 
 	
 	
 	@GetMapping({"/home1", "/valentino", "/Home1"})            //indicando las rutas que llamaremos
@@ -44,30 +47,16 @@ public class HomeController {
 	}
 
 	@GetMapping({"/home2", "/anabel", "/Home2"})          //indicando las rutas que llamaremos
+	
+
 	public String HolaMundo2(Model model) {
-		
-		model.addAttribute("TituloPagina", titlePage);
-		
-		//creando personaje 1
-		Personaje personaje = new Personaje();
-		
-		//determinando nombre del personaje(atributo del model personaje)
-		personaje.setNombre("Ace");
-		personaje.setEdad("14");
-		personaje.setSerie("One Piece");
-		personaje.setEstado("Morido");
-		personaje.setNacimiento("14-10-22");
-		
-		
-		List<Personaje> listita2 = new ArrayList<>();
-		listita2.add(personaje); //añadiendo personaje 1
-		
+
+
 		model.addAttribute("tituloPagina", titlePage);
 		model.addAttribute("titulo2", "Lista de personajes");
-		model.addAttribute("listita2", listita2);
+		model.addAttribute("listita2", personajes.crearPersonaje()); //trae del service
 		
-		
-		
+
 		return "Home2";
 	}
 
