@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/app") //indicando ruta inicial
 public class HomeController {
 	
-	@GetMapping("/home")  //indicando las rutas que llamaremos
+	@GetMapping("/home")            //indicando las rutas que llamaremos
 	public String HolaMundo() {
 		return "Home";
 	}
 
-	@GetMapping("/home2")  //indicando las rutas que llamaremos
+	@GetMapping("/home2")          //indicando las rutas que llamaremos
 	public String HolaMundo2() {
 		return "Home2";
 	}
