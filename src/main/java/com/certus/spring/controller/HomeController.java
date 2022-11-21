@@ -7,5 +7,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/app") //indicando ruta inicial
 public class HomeController {
 	
-	//@GetMapping({"/home", "/"})
+	//@GetMapping("/home", "/")
 }
