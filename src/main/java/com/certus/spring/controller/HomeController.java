@@ -9,8 +9,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
 import com.certus.spring.service.PersonajeService;
 import com.certus.spring.models.Mascota;
+
+import com.certus.spring.models.Personaje;
+import com.certus.spring.service.MascotaService;
 
 
 @Controller
@@ -20,34 +24,25 @@ public class HomeController {
 	@Value("${title.generic}")            //evaluando el titulo del propertis
 	private String titlePage;
 	
+
 	//service personaje
 	private PersonajeService personajes = new PersonajeService(); 
+	private MascotaService mascota =  new MascotaService();
+
 	
-	
-	@GetMapping({"/home1", "/valentino", "/Home1"})            //indicando las rutas que llamaremos
+	@GetMapping({"/home1", "/valentino", "/Home1"})      
 	public String HolaMundo(Model model) {
-		
-		
-		Mascota mascota1 = new Mascota();
-		
-		mascota1.setNombre("Manchita");
-		mascota1.setTipo("Gato");
-		mascota1.setRaza("Atigrado");
-		mascota1.setColor("Blanco con manchas medias plomas");
-		mascota1.setEdad("1 año");
-			
-		List<Mascota> listita1 = new ArrayList<>();
-		listita1.add(mascota1);
-		
-		
 		model.addAttribute("TituloPagina", titlePage);
 		model.addAttribute("titulo1", "Esta es la lista de mascotas");
-		model.addAttribute("listita1", listita1);
+		model.addAttribute("listita1", mascota.crearMascota());
+		model.addAttribute("Estado1", "");
 		return "Home";
 	}
 
+
 	@GetMapping({"/home2", "/anabel", "/Home2"})          //indicando las rutas que llamaremos
 	
+       
 
 	public String HolaMundo2(Model model) {
 
