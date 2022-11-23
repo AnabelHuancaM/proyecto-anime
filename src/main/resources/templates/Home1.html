@@ -26,7 +26,7 @@
         <a class="nav-link" th:href="@{/app/form1}">Formulario1</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" th:href="@{/app/home2}">Formulario2</a>
+        <a class="nav-link" th:href="@{/app/form2}">Formulario2</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -40,21 +40,22 @@
    <h2 th:text="${Estado1}"></h2>
 
 <!-- ESTE ES LA LISTA-->
-    <div>
-    	<ul th:each="mascota : ${listita1}">
-    	<li th:text="${mascota.nombre}">
-    	<li th:text="${mascota.tipo}">
-    	<li th:text="${mascota.raza}">
-    	<li th:text="${mascota.color}">
-    	<li th:text="${mascota.edad}">
-    	</ul>
-    </div>
+
+<ul class="list-group m-3 " th:each="mascota : ${listita1}">
+  <li class="list-group-item active" th:text="${mascota.nombre}"></li>
+  <li class="list-group-item" th:text="${mascota.tipo}"></li>
+  <li class="list-group-item" th:text="${mascota.raza}"></li>
+  <li class="list-group-item" th:text="${mascota.color}"></li>
+  <li class="list-group-item" th:text="${mascota.edad}"></li>
+</ul>
+
+
+
     
     
     
     
-    
-    
+ 
     
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
