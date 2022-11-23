@@ -1,7 +1,5 @@
 package com.certus.spring.controller;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -12,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.certus.spring.service.PersonajeService;
 import com.certus.spring.models.Mascota;
-
 import com.certus.spring.models.Personaje;
 import com.certus.spring.service.MascotaService;
 
@@ -41,11 +38,7 @@ public class HomeController {
 
 
 	@GetMapping({"/home2", "/anabel", "/Home2"})          //indicando las rutas que llamaremos
-	
-       
-
 	public String HolaMundo2(Model model) {
-
 
 		model.addAttribute("tituloPagina", titlePage);
 		model.addAttribute("titulo2", "Lista de personajes");
