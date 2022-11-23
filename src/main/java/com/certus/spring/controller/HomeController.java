@@ -37,6 +37,7 @@ public class HomeController {
 	}
 
 
+
 	@GetMapping({"/home2", "/anabel", "/Home2"})          //indicando las rutas que llamaremos
 	public String HolaMundo2(Model model) {
 
