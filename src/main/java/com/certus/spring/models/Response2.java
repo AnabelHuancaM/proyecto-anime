@@ -7,7 +7,7 @@ public class Response2<T> {
 	private String mensaje2;
 	private List<T> data2;
 	
-	public boolean isEstado2() {
+	public boolean getEstado2() {
 		return estado2;
 	}
 	public void setEstado2(boolean estado2) {

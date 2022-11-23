@@ -4,18 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.certus.spring.models.Personaje;
+import com.certus.spring.models.Response2;
+
 
 //clase personaje service
 public class PersonajeService {
 	
 	//crud
-	public List<Personaje> crearPersonaje() { 
-
-		Personaje personaje1 = new Personaje();		//creando personaje 1
+	public Response2<Personaje> crearPersonaje() { 
+		boolean estadoCreacion = false;
+		
+		Response2<Personaje> response2 = new Response2<>();
 		
 		List<Personaje> listita2 = new ArrayList<>();
 		
+		
 		//determinando nombre del personaje(atributo del model personaje)
+		Personaje personaje1 = new Personaje();		//creando personaje 1
 		personaje1.setNombre("Ace");
 		personaje1.setEdad("14");
 		personaje1.setSerie("One Piece");
@@ -34,13 +39,31 @@ public class PersonajeService {
 		personaje2.setNacimiento("14-10-22");
 		
 		//llamando a personaje 1 y 2
-		listita2.add(personaje1); //añadiendo personaje 1
+		listita2.add(personaje1); 
 		listita2.add(personaje2);
 		
+		
+		//validando la lista de personajes
+		if (listita2.size() == 0) {
+			estadoCreacion = true;
+			response2.setEstado2(true);
+			response2.setMensaje2("Creado correctamente");
+			response2.setData2(listita2);
+		}else {
+			response2.setEstado2(false);
+			response2.setMensaje2("Se produjo un error D:");
+		}
+		
+		
+		estadoCreacion = true; //retorna estado de creacion true
+				
+		return response2; 
+		
 
-		return listita2; //retorna estado de creacion
 		
 	}
+	
+	
 	
 	public String editarPersonaje() { 
 		

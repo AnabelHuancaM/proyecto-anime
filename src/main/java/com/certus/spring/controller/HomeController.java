@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.certus.spring.service.PersonajeService;
 import com.certus.spring.models.Mascota;
 import com.certus.spring.models.Personaje;
-import com.certus.spring.models.Response1;
 import com.certus.spring.service.MascotaService;
 
 
@@ -32,13 +31,14 @@ public class HomeController {
 	public String HolaMundo(Model model) {
 		model.addAttribute("TituloPagina", titlePage);
 		model.addAttribute("titulo1", "Esta es la lista de mascotas");
+		model.addAttribute("listita1", mascota.crearMascota());
+		model.addAttribute("Estado1", "");
 		
 		if(mascota.crearMascota().getEstado1()) {
 			model.addAttribute("listita1", mascota.crearMascota().getData1());
 
 		}
 		model.addAttribute("Estado1", mascota.crearMascota().getMensaje1());
-		
 		
 		return "Home1";
 	}
@@ -47,12 +47,15 @@ public class HomeController {
 
 	@GetMapping({"/home2", "/anabel", "/Home2"})          //indicando las rutas que llamaremos
 	public String HolaMundo2(Model model) {
-
-		model.addAttribute("tituloPagina", titlePage);
-		model.addAttribute("titulo2", "Lista de personajes");
-		model.addAttribute("listita2", personajes.crearPersonaje()); //trae del service
 		
+		
+		if (personajes.crearPersonaje().getEstado2()) {
 
+			model.addAttribute("listita2", personajes.crearPersonaje().getData2()); //trae del service
+		}
+
+		model.addAttribute("Estado", personajes.crearPersonaje().getMensaje2());
+		
 		return "Home2";
 	}
 	
@@ -63,6 +66,8 @@ public class HomeController {
 		model.addAttribute("tituloPagina", titlePage);
 		model.addAttribute("zzzz", "mascotassssss");
 		model.addAttribute("info", personajes.crearPersonaje());
+		
+		
 		
 		return "Home";
 	}
