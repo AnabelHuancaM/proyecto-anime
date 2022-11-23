@@ -49,22 +49,19 @@
 
 	<div class="container">
 	<br>
-    <h1 th:text="${titulo2}">HI 2</h1>
+    <h1 th:text="${titulo2}"></h1>
     <br>
     <hr>
     <div>
-    	<ul th:each="personaje1 : ${listita2}">
-    		<li th:text="${personaje1.nombre}">
-    		<li th:text="${personaje1.edad}">
-    		<li th:text="${personaje1.serie}">
-    		<li th:text="${personaje1.estado}">
-    		<li th:text="${personaje1.nacimiento}">
+    	<ul class="list-group m-3 " th:each="personaje1 : ${listita2}">
+    		<li class="list-group-item" th:text="${personaje1.nombre}">
+    		<li class="list-group-item" th:text="${personaje1.edad}">
+    		<li class="list-group-item" th:text="${personaje1.serie}">
+    		<li class="list-group-item" th:text="${personaje1.estado}">
+    		<li class="list-group-item" th:text="${personaje1.nacimiento}">
     		</ul>
     </div>
-    
 
-	
-    <hr>
         </div>
     
 
