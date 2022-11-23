@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="${tituloPagina}"></title>
+
+<!-- link CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://i.pinimg.com/564x/9c/67/12/9c6712a130ae1b68fa65921817a4e192.jpg" type="image/x-icon">
+<title th:text="${TituloPagina}"></title>
+</head>
+<body>
+	<!-- Header nav-->
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" href="#">Anabel</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+
+					<!-- links del nav bar -->
+					<li class="nav-item"><a class="nav-link"
+						th:href="@{/app/Home1}"> Home1</a></li>
+
+					<li class="nav-item"><a class="nav-link"
+						th:href="@{/app/Home2}">Home2</a></li>
+
+					<li class="nav-item"><a class="nav-link"
+						th:href="@{/app/Formulario1}"> Formulario1</a></li>
+
+					<li class="nav-item active"><a class="nav-link"
+						th:href="@{/app/form2}"> Formulario2</a></li>
+
+				</ul>
+				<form class="form-inline my-2 my-lg-0">
+					<input class="form-control mr-sm-2" type="search"
+						placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				</form>
+			</div>
+		</nav>
+	</header>
+
+	<!-- Formulario -->
+	<br>
+	<div class="container bg-light">
+		<form> <br>
+			<h1 th:text="${titulo2}"></h1>
+
+			<div class="form-group">
+				<label for="nombre">Nombre</label> <input type="text"
+					class="form-control" id="nombre">
+
+			</div>
+			<div class="form-group">
+				<label for="edad">Edad</label> <input type="text"
+					class="form-control" id="edad">
+			</div>
+
+			<div class="form-group">
+				<label for="serie">Serie</label> <input type="text"
+					class="form-control" id="serie">
+			</div>
+
+			<div class="form-group">
+				<label for="serie">Estado</label> <input type="text"
+					class="form-control" id="serie">
+			</div>
+
+			<div class="form-group">
+				<label for="nacim">Nacimiento</label> <input type="number"
+					class="form-control" id="nacim">
+			</div>
+			<br>
+			<button type="submit" class="btn btn-primary">Registrar</button>
+		</form>
+	</div>
+
+
+
+
+
+
+
+
+
+	<!-- link JS bootstrap -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+		crossorigin="anonymous"></script>
+</body>
+</html>

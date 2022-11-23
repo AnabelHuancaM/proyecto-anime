@@ -59,6 +59,25 @@ public class HomeController {
 		return "Home";
 	}
 	
+	//llamando a formulario 2
+	@GetMapping({"/form2","/Form2"})
+	public String FormPersonaje(Model model) {
+				
+		model.addAttribute("tituloPagina", titlePage);
+		model.addAttribute("titulo2", "Formulario de personajes :D");
+		model.addAttribute("info", personajes.crearPersonaje());
+		
+		return "Form2";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 
 }

@@ -27,10 +27,10 @@ public class PersonajeService {
 		Personaje personaje2 = new Personaje();		//creando personaje 1
 				
 		//determinando nombre del personaje(atributo del model personaje)
-		personaje2.setNombre("Ace2");
-		personaje2.setEdad("143");
-		personaje2.setSerie("One Piece");
-		personaje2.setEstado("Morido");
+		personaje2.setNombre("Maki Zenin");
+		personaje2.setEdad("18");
+		personaje2.setSerie("Jujutsu Kaisen");
+		personaje2.setEstado("Viva");
 		personaje2.setNacimiento("14-10-22");
 		
 		//llamando a personaje 1 y 2
