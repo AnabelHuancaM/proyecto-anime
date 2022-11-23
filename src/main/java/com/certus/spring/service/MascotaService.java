@@ -4,12 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.certus.spring.models.Mascota;
+import com.certus.spring.models.Response1;
 
 public class MascotaService {
 
 	public List<Mascota> crearMascota() {
 
+		
+		
+		Response1<Mascota> response1 = new Response1<>();
 		boolean estadoCreacion = false;
+		
 		List<Mascota> listita1 = new ArrayList<>();
 
 		//creando segunda mascota
@@ -37,9 +42,26 @@ public class MascotaService {
 		listita1.add(mascota1);
 		listita1.add(mascota2);
 
-		estadoCreacion = true;
+	
+		
+		//Validacion de lista de personajes
+		if(listita1.size() > 0) {
+			estadoCreacion = true;
+			response1.setEstado(estadoCreacion);
+			response1.setMensaje("Creado correctamente");
+			response1.setData(listita1);
+		}else {
+			response1.setEstado(estadoCreacion);
+			response1.setMensaje("Se produjo un error al crear el personaje");
+		}
+		
+		
+		
+		
+		
+		
 
-		return listita1;
+		return response1;
 	}
 
 	
