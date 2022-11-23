@@ -59,6 +59,21 @@ public class HomeController {
 		return "Home";
 	}
 	
+	
+	
+	
+	
+	@GetMapping({"/form1", "/Form1"})
+	public String FormularioMascota(Model model) {
+		
+		
+		model.addAttribute("tituloPagina", titlePage);
+		model.addAttribute("tituloFormulario1", "Formulario Mascota");
+		model.addAttribute("info", personajes.crearPersonaje());
+		
+		return "Formulario1";
+	}
+	
 	//llamando a formulario 2
 	@GetMapping({"/form2","/Form2"})
 	public String FormPersonaje(Model model) {
@@ -69,6 +84,7 @@ public class HomeController {
 		
 		return "Form2";
 	}
+	
 	
 	
 	
