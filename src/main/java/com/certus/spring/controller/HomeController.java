@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.certus.spring.service.PersonajeService;
 import com.certus.spring.models.Mascota;
 import com.certus.spring.models.Personaje;
+import com.certus.spring.models.Response1;
 import com.certus.spring.service.MascotaService;
 
 
@@ -31,8 +32,14 @@ public class HomeController {
 	public String HolaMundo(Model model) {
 		model.addAttribute("TituloPagina", titlePage);
 		model.addAttribute("titulo1", "Esta es la lista de mascotas");
-		model.addAttribute("listita1", mascota.crearMascota());
-		model.addAttribute("Estado1", "");
+		
+		if(mascota.crearMascota().getEstado1()) {
+			model.addAttribute("listita1", mascota.crearMascota().getData1());
+
+		}
+		model.addAttribute("Estado1", mascota.crearMascota().getMensaje1());
+		
+		
 		return "Home1";
 	}
 

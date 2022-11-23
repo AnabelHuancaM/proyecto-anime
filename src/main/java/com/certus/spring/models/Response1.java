@@ -8,7 +8,7 @@ public class Response1<T> {
 	private List<T> data1;
 	
 	
-	public boolean isEstado1() {
+	public boolean getEstado1() {
 		return estado1;
 	}
 	public void setEstado1(boolean estado1) {
