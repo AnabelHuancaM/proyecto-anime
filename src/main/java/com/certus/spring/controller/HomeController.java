@@ -47,14 +47,15 @@ public class HomeController {
 
 	@GetMapping({"/home2", "/anabel", "/Home2"})          //indicando las rutas que llamaremos
 	public String HolaMundo2(Model model) {
-		
+		model.addAttribute("TituloPagina", titlePage);
+		model.addAttribute("titulo2", "Listado de personajes");
 		
 		if (personajes.crearPersonaje().getEstado2()) {
 
 			model.addAttribute("listita2", personajes.crearPersonaje().getData2()); //trae del service
 		}
 
-		model.addAttribute("Estado", personajes.crearPersonaje().getMensaje2());
+		model.addAttribute("Estado2", personajes.crearPersonaje().getMensaje2());
 		
 		return "Home2";
 	}

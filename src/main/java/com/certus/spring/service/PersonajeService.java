@@ -44,13 +44,13 @@ public class PersonajeService {
 		
 		
 		//validando la lista de personajes
-		if (listita2.size() == 0) {
+		if (listita2.size() > 0) {
 			estadoCreacion = true;
 			response2.setEstado2(true);
 			response2.setMensaje2("Creado correctamente");
 			response2.setData2(listita2);
 		}else {
-			response2.setEstado2(false);
+			response2.setEstado2(estadoCreacion);
 			response2.setMensaje2("Se produjo un error D:");
 		}
 		
@@ -58,9 +58,7 @@ public class PersonajeService {
 		estadoCreacion = true; //retorna estado de creacion true
 				
 		return response2; 
-		
-
-		
+				
 	}
 	
 	
