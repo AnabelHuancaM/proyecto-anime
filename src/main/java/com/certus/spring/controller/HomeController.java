@@ -36,7 +36,7 @@ public class HomeController {
 		model.addAttribute("titulo1", "Esta es la lista de mascotas");
 		model.addAttribute("listita1", mascota.crearMascota());
 		model.addAttribute("Estado1", "");
-		return "Home";
+		return "Home1";
 	}
 
 
@@ -54,5 +54,18 @@ public class HomeController {
 
 		return "Home2";
 	}
+	
+	@GetMapping({"/home","/Home", "/"})
+	public String Inicio(Model model) {
+		
+		
+		model.addAttribute("tituloPagina", titlePage);
+		model.addAttribute("zzzz", "mascotassssss");
+		model.addAttribute("info", personajes.crearPersonaje());
+		
+		return "Home";
+	}
+	
+	
 
 }
