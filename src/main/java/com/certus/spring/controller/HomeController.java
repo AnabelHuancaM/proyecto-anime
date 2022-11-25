@@ -47,7 +47,7 @@ public class HomeController {
 
 	@GetMapping({"/home2", "/anabel", "/Home2"})          //indicando las rutas que llamaremos
 	public String HolaMundo2(Model model) {
-		model.addAttribute("TituloPagina", titlePage);
+		model.addAttribute("tituloPagina", titlePage);
 		model.addAttribute("titulo2", "Listado de personajes");
 		
 		if (personajes.crearPersonaje().getEstado2()) {
