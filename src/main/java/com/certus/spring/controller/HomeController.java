@@ -1,6 +1,7 @@
 package com.certus.spring.controller;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,9 +23,9 @@ public class HomeController {
 	private String titlePage;
 	
 
-	//service personaje
+@Autowired
 	private PersonajeService personajes = new PersonajeService(); 
-	private MascotaService mascota =  new MascotaService();
+	private MascotaService mascota =  new MascotaService();	//service personaje
 
 	
 	@GetMapping({"/home1", "/valentino", "/Home1"})      

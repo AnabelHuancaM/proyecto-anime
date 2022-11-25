@@ -3,14 +3,16 @@ package com.certus.spring.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.certus.spring.models.Personaje;
 import com.certus.spring.models.Response2;
 
 
 //clase personaje service
+@Service
 public class PersonajeService {
 	
-	//crud
 	public Response2<Personaje> crearPersonaje() { 
 		boolean estadoCreacion = false;
 		
