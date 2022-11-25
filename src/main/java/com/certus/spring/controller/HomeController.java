@@ -65,8 +65,6 @@ public class HomeController {
 		
 		
 		model.addAttribute("tituloPagina", titlePage);
-		model.addAttribute("zzzz", "mascotassssss");
-		model.addAttribute("info", personajes.crearPersonaje());
 		
 		
 		
